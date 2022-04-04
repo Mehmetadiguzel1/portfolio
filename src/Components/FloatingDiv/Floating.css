@@ -10,9 +10,11 @@
 }
 .floatingdiv>img{
     transform: scale(0.5);
+    margin-left: -24px;
 }
 .floatingdiv>span{
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .blur{
