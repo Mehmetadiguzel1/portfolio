@@ -40,7 +40,7 @@ const Services = () => {
                 
                 />
             </div>
-            <div className='blur s-blur2' style={{background: "purple", left:'10rem'}} ></div>
+            <div className='blur s-blur2' style={{background: "rgb(252, 145, 252)", left:'10rem'}} ></div>
 
         </div>
     </div>
