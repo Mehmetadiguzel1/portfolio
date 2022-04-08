@@ -6,6 +6,7 @@ import Chrome from '../../img/chrome.png';
 import Xbox from '../../img/xbox.png';
 import Starbucks from '../../img/Starbucks.png'
 import { themeContext } from "../../Context";
+import { motion } from "framer-motion";
 
 
 const Works = () => {
@@ -31,7 +32,12 @@ const Works = () => {
             
         </div>
         <div className="w-right">
-            <div className="w-mainCircle">
+            <motion.div
+                initial={{ rotate: 45 }}
+                whileInView={{ rotate: 0 }}
+                viewport={{ margin: "-40px" }}
+                transition={{ duration: 3.5, type: "spring" }}
+                className="w-mainCircle">
                 <div className="w-secCircle">
                     <img src={AppStore} alt="" />
                 </div>
@@ -47,7 +53,7 @@ const Works = () => {
                 <div className="w-secCircle">
                     <img  src={Starbucks} alt="" />
                 </div>
-            </div>
+            </motion.div>
 
             <div className='w-backCircle blueCircle' ></div>
             <div className='w-backCircle yellowCircle' ></div>

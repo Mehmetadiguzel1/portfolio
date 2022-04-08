@@ -5,10 +5,13 @@ import Humble from '../../img/humble.png';
 import Card from '../Card/Card';
 import Resume from './Mehmet-Furkan-Adiguzel.pdf'
 import { themeContext } from "../../Context";
+import { motion } from "framer-motion";
 
 
 
 const Services = () => {
+    const transition = {duration : 2, type:'spring'}
+
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
   return (
@@ -28,22 +31,28 @@ const Services = () => {
             
         </div>
         <div className="cards">
-            <div style={{left: '22rem'}} >
+            <motion.div 
+                initial={{left: '25rem'}}
+                whileInView={{left:'19rem'}}
+                transition={transition} style={{left: '22rem'}} >
                 <Card 
                     emoji = {HeartEmoji}
                     heading = {'Design'}
                     detail = {"Figma, Sketch, Adobe XD, Adobe"}
                 
                 />
-            </div>
-            <div style={{top: '12rem', left: '2rem'}} >
+            </motion.div>
+            <motion.div
+                initial={{right:'14rem',top:'15rem'}}
+                whileInView={{left:'5rem',}}
+                transition={transition} style={{top: '12rem', left: '2rem'}} >
                 <Card 
                     emoji = {Humble}
                     heading = {'Developer'}
                     detail = {"HTML, CSS, JavaScript, React, React Native"}
                 
                 />
-            </div>
+            </motion.div>
             <div className='blur s-blur2' style={{background: "rgb(252, 145, 252)", left:'10rem'}} ></div>
 
         </div>
