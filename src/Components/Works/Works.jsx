@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from "react";
 import './Works.css'
 import Facebook from '../../img/facebook.png';
 import AppStore from '../../img/app-store.png';
 import Chrome from '../../img/chrome.png';
 import Xbox from '../../img/xbox.png';
 import Starbucks from '../../img/Starbucks.png'
+import { themeContext } from "../../Context";
+
 
 const Works = () => {
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
   return (
     <div className="works">
          <div className="awesome">
-            <span>Work for All these</span>
+            <span style={{ color: darkMode ? "white" : "" }}>Work for All these</span>
             <span>Brand & Clients</span>
             <span>I can give you all service for front end.
             <br />

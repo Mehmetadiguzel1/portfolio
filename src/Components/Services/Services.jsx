@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from "react";
 import './Services.css'
 import HeartEmoji from '../../img/heartemoji.png';
 import Humble from '../../img/humble.png';
 import Card from '../Card/Card';
 import Resume from './Mehmet-Furkan-Adiguzel.pdf'
+import { themeContext } from "../../Context";
+
 
 
 const Services = () => {
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
   return (
     <div className="services">
         <div className="awesome">
-            <span>My Awasome</span>
+            <span style={{ color: darkMode ? "white" : "" }}>My Awasome</span>
             <span>services</span>
             <span>I can give you all service for front end.
             <br />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from "react";
 import './Testimonials.css'
 import Man1 from '../../img/Man1.jpg'
 import Man2 from '../../img/Man2.jpg'
@@ -8,8 +8,11 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import { Pagination } from 'swiper'
 import "swiper/css/pagination"
 import "swiper/css"
+import { themeContext } from "../../Context";
 
 const Testimonials = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   const clients =[
 
     {
@@ -48,7 +51,7 @@ const Testimonials = () => {
             <SwiperSlide key={index}>
               <div className="testimonial">
                 <img src={client.img} alt="" />
-                <span>{client.review}</span>
+                <span style={{color: darkMode?'white': ''}} >{client.review}</span>
               </div>
             </SwiperSlide>
           );
